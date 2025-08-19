@@ -13,6 +13,7 @@ namespace backend.Models
         public string email { get; set; }
         public string password { get; set; }
         public decimal fund { get; set; }
+        public string type { get; set; }
         public int status { get; set; }
         public DateTime? createdAt { get; set; }
         public DateTime? updatedAt { get; set; }
