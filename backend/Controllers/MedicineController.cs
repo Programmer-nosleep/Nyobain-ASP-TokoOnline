@@ -39,5 +39,16 @@ namespace backend.Controllers
 
             return response;
         }
+
+        [HttpGet]
+        [Route("OrderList")]
+        public Response OrderList(Users users)
+        {
+            DAL dal = new DAL();
+            SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("EMedCS").ToString());
+            Response response = dal.OrderList(users, conn);
+
+            return response;
+        }
     }
 }
