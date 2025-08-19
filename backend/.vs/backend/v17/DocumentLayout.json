@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Neovecpp\\SideProject\\Project\\Nyobain-ASP-TokoOnline\\backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D298F124-3334-48AA-9DCF-89EFEF25D3E2}|backend.csproj|c:\\users\\neovecpp\\sideproject\\project\\nyobain-asp-tokoonline\\backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D298F124-3334-48AA-9DCF-89EFEF25D3E2}|backend.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D298F124-3334-48AA-9DCF-89EFEF25D3E2}|backend.csproj|c:\\users\\neovecpp\\sideproject\\project\\nyobain-asp-tokoonline\\backend\\models\\dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D298F124-3334-48AA-9DCF-89EFEF25D3E2}|backend.csproj|solutionrelative:models\\dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DAL.cs",
+              "DocumentMoniker": "C:\\Users\\Neovecpp\\SideProject\\Project\\Nyobain-ASP-TokoOnline\\backend\\Models\\DAL.cs",
+              "RelativeDocumentMoniker": "Models\\DAL.cs",
+              "ToolTip": "C:\\Users\\Neovecpp\\SideProject\\Project\\Nyobain-ASP-TokoOnline\\backend\\Models\\DAL.cs",
+              "RelativeToolTip": "Models\\DAL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T08:23:38.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Neovecpp\\SideProject\\Project\\Nyobain-ASP-TokoOnline\\backend\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Neovecpp\\SideProject\\Project\\Nyobain-ASP-TokoOnline\\backend\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T08:20:29.654Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
