@@ -86,9 +86,12 @@ namespace backend.Models
                 user.ID = Convert.ToInt32(dataTable.Rows[0]["id"]);
                 user.firstname = Convert.ToString(dataTable.Rows[0]["firstname"]);
                 user.lastname = Convert.ToString(dataTable.Rows[0]["lastname"]);
+                user.password = Convert.ToString(dataTable.Rows[0]["password"]);
                 user.email = Convert.ToString(dataTable.Rows[0]["email"]);
                 user.fund = Convert.ToDecimal(dataTable.Rows[0]["fund"]);
                 user.type = Convert.ToString(dataTable.Rows[0]["type"]);
+                user.createdAt = Convert.ToDateTime(dataTable.Rows[0]["create_at"]);
+                user.updatedAt = Convert.ToDateTime(dataTable.Rows[0]["updated_at"]);
 
                 response.StatusCode = 200;
                 response.StatusMessage = "User is exist.";
