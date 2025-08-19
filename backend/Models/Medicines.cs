@@ -11,7 +11,7 @@ namespace backend.Models
         public string manufaturer { get; set; }
         public decimal unitPrice { get; set; }
         public decimal discount { get; set; }
-        public DateTime expDate { get; set; }
+        public DateTime? expDate { get; set; }
         public string imgURL { get; set; }
 
     }

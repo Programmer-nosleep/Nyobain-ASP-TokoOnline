@@ -103,5 +103,107 @@ namespace backend.Models
             response.user = user;
             return response;
         }
+
+        public Response UpdateProfile(Users users, SqlConnection conn)
+        {
+            Response response = new Response();
+            SqlCommand cmd = new SqlCommand("sp_updateProfile", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@firstname", users.firstname);
+            cmd.Parameters.AddWithValue("@lastname", users.lastname);
+            cmd.Parameters.AddWithValue("@email", users.email);
+            cmd.Parameters.AddWithValue("@password", users.password);
+            // cmd.Parameters.AddWithValue()
+            conn.Open();
+
+            int i = cmd.ExecuteNonQuery();
+            if (i > 0)
+            {
+                response.StatusCode = 200;
+                response.StatusMessage = "Record updated successfully";
+            }
+
+            response.StatusCode = 100;
+            response.StatusMessage = "Some error occured. Try again after sometime";
+            return response;
+        }
+
+        public Response AddToCart(Cart cart, SqlConnection conn)
+        {
+            Response response = new Response();
+            SqlCommand cmd = new SqlCommand("sp_AddToCart", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@user_id", cart.userId);
+            cmd.Parameters.AddWithValue("@unit_price", cart.unitPrice);
+            cmd.Parameters.AddWithValue("@medicine_id", cart.medicineId);
+            cmd.Parameters.AddWithValue("@discount", cart.discount);
+            cmd.Parameters.AddWithValue("@quantity", cart.quantity);
+            cmd.Parameters.AddWithValue("@total_price", cart.totalPrice);
+
+            conn.Open();
+            int i = cmd.ExecuteNonQuery();
+            conn.Close();
+
+            if (i > 0)
+            {
+                response.StatusCode = 200;
+                response.StatusMessage = "Item added successfully";
+            }
+
+            response.StatusCode = 100;
+            response.StatusMessage = "Item could not be added";
+
+            return response;
+        }
+
+        public Response PlaceOrder(Users users, SqlConnection conn)
+        {
+            Response response = new Response();
+            SqlCommand cmd = new SqlCommand("sp_PlaceOrder", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@id", users.ID);
+            // cmd.Parameters.AddWithValue("@");
+            conn.Open();
+            int i = cmd.ExecuteNonQuery();
+            conn.Close();
+
+            if (i > 0)
+            {
+                response.StatusCode = 200;
+                response.StatusMessage = "Order has been placed successfully";
+            }
+
+            response.StatusCode = 100;
+            response.StatusMessage = "Order could not be placed";
+
+            return response;
+        }
+
+        public Response UserOrderList(Users users, SqlConnection conn)
+        {
+            Response response = new Response();
+            SqlDataAdapter sqlDA = new SqlDataAdapter("sp_OrderList", conn);
+            sqlDA.SelectCommand.CommandType = CommandType.StoredProcedure;
+            sqlDA.SelectCommand.Parameters.AddWithValue("@type", users.type);
+            sqlDA.SelectCommand.Parameters.AddWithValue("@id", users.ID);
+            // sqlDA.SelectCommand.Parameters.AddWithValue("@", users.);
+            // sqlDA.SelectCommand.Parameters.AddWithValue("", users.);
+            DataTable dataTable = new DataTable();
+
+            sqlDA.Fill(dataTable);
+
+            if (dataTable.Rows.Count > 0)
+            {
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    Orders orders = new Orders();
+                    orders.id = Convert.ToInt32(dataTable.Rows[0]["id"]);
+                    orders.orderNo = Convert.ToString(dataTable.Rows[0]["order_no"]);
+                }
+            }
+
+            return response;
+        }
     }
 }
+

@@ -6,6 +6,7 @@ namespace backend.Models
     {
         public int id { get; set; }
         public int userId { get; set; }
+        public int medicineId { get; set; }
         public decimal unitPrice { get; set; }
         public decimal discount { get; set; }
         public int quantity { get; set; }

@@ -15,6 +15,7 @@ namespace backend.Models
         public decimal fund { get; set; }
         public string type { get; set; }
         public int status { get; set; }
+        public string OrderType { get; set; }
         public DateTime? createdAt { get; set; }
         public DateTime? updatedAt { get; set; }
     }

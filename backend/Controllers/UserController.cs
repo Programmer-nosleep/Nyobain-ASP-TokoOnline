@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using Microsoft.Identity.Client;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using backend.Models;
-using Microsoft.Identity.Client;
 
 namespace backend.Controllers
 {
@@ -37,11 +37,34 @@ namespace backend.Controllers
         public Response Login(Users users)
         {
             DAL dal = new DAL();
-            SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("").ToString());
+            SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("EMedCS").ToString());
 
             Response response = new Response();
             response = dal.Login(users, conn);
 
+            return response;
+        }
+
+        [HttpPost]
+        [Route("ViewUser")]
+        public Response ViewUser(Users users)
+        {
+            DAL dal = new DAL();
+            SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("EMedCS").ToString());
+
+            Response response = dal.ViewUser(users, conn);
+
+            return response;
+        }
+
+        [HttpPost]
+        [Route("UpdateProfile")]
+        public Response UpdateProfile(Users users)
+        {
+            DAL dal = new DAL();
+            SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("EMedCS").ToString());
+
+            Response response = dal.UpdateProfile(users, conn);
             return response;
         }
     }
